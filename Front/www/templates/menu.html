@@ -1,0 +1,26 @@
+<ion-side-menus enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="left" id="side-menu21">
+        <ion-header-bar class="bar-stable">
+            <div class="title">Menu</div>
+        </ion-header-bar>
+        <ion-content padding="false" class="side-menu-left has-header">
+            <ion-list>
+                <ion-item ui-sref="menu.home" menu-close="">Accueil</ion-item>
+                <ion-item ui-sref="menu.search_game" menu-close="">Rechercher une partie</ion-item>
+                <ion-item ui-sref="menu.create_game" menu-close="">Créer une partie</ion-item>
+                <ion-item ui-sref="menu.game_organize" menu-close="">Mes parties</ion-item>
+                <ion-item ui-sref="menu.profil" menu-close="">Mon profil</ion-item>
+            </ion-list>
+            <button id="menu-button39" class="button button-balanced  button-block">Déconnexion</button>
+        </ion-content>
+    </ion-side-menu>
+</ion-side-menus>

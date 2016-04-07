@@ -1,0 +1,1 @@
+rails generate scaffold User pseudo:string email:string age:int gender:string address:string zipcode:string city:string description:string game:string
