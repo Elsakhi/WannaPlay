@@ -5,7 +5,6 @@ angular.module('app.controllers', [])
 })
 
 .controller('authenticationCtrl', function($scope, User) {
-	console.log("ta mere");
 	User.query().$promise.then(function(response){
 		console.log("loaded");
 		console.log(response);
@@ -66,9 +65,14 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('search_game_resultsCtrl', function($scope) {
-
+.controller('search_game_resultsCtrl', function($scope, Party) {
+	Party.query().$promise.then(function(response){
+		console.log(response);
+    	$scope.parties = response;
+	});
 })
+
+
 
 .controller('set_profilCtrl', function($scope) {
 

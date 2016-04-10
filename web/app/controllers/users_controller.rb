@@ -1,9 +1,5 @@
 class UsersController < ApplicationController
   def index
-    render json: User.all
-  end
-
-  def create
-    User.create(params)
+    render json: [User.new(email: 'toto@yoyo.com')]
   end
 end

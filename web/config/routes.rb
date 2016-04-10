@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'users/index'
+ 
 
   # mount API::Base => '/api'
 
   resources :users
+
+  resources :parties
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
