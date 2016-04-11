@@ -2,7 +2,7 @@
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <ion-list ng-repeat="party in parties">
 
-            <ion-item class="item-thumbnail-left" ui-sref="menu.game_details">
+            <ion-item class="item-thumbnail-left" ng-click="show(party.id)">
                 <img>
                 <h2>{{party.name}}</h2>
                 <p>{{party.boardgames}}</p>

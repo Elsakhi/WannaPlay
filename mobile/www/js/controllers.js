@@ -41,8 +41,10 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('game_detailsCtrl', function($scope) {
-
+.controller('game_detailsCtrl', function($scope, $stateParams, Party) {
+	Party.get({id: $stateParams.party_id}).$promise.then(function(response) {
+  		$scope.party = response
+	});
 })
 
 .controller('game_organizeCtrl', function($scope, MyParties, $location) {
@@ -96,11 +98,15 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('search_game_resultsCtrl', function($scope, Party) {
+.controller('search_game_resultsCtrl', function($scope, Party, $location) {
 	Party.query().$promise.then(function(response){
 		console.log(response);
     	$scope.parties = response;
 	});
+
+	$scope.show = function(party_id) {
+		$location.path('/side-menu21/page8').search({party_id: party_id})
+	}
 })
 
 

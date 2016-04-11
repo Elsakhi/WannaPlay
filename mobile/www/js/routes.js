@@ -76,7 +76,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.game_details', {
-    url: '/page8',
+    url: '/page8?party_id',
     views: {
       'side-menu21':{
         templateUrl: 'templates/game_details.html',
