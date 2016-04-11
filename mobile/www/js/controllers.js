@@ -6,7 +6,6 @@ angular.module('app.controllers', [])
 
 .controller('menuCtrl', function($scope, $location) {
 	$scope.logout = function(argument) {
-		console.log('hello, world');
 		window.localStorage['user'] = null;
 	    $location.path('/page1');
 
@@ -17,7 +16,24 @@ angular.module('app.controllers', [])
 	
 })
 
-.controller('create_gameCtrl', function($scope) {
+.controller('create_gameCtrl', function($scope, PartyCreate, $location) {
+	$scope.party = {};
+
+	$scope.partycreate = function() {
+  		var party_create = new PartyCreate({ party: $scope.party });
+  		party_create.$save(
+	  		function(party){
+	      		$location.path('/side-menu21/page7');
+	    	},
+	    	function(err){
+	      		var error = err["data"]["error"] || err.data.join('. ')
+	      		var confirmPopup = $ionicPopup.alert({
+	        		title: 'An error occured',
+	        		template: error
+	      		});
+	      	}
+	    );
+  	}
 
 })
 

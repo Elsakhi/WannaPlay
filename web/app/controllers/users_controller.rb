@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def index
-    render json: [User.new(email: 'toto@yoyo.com')]
+    render json: User.all
   end
 end

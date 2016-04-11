@@ -19,3 +19,7 @@ angular.module('app.services', [])
 .factory('UserCreate', function($resource) {
   return $resource("http://localhost:3000/users.json");
 })
+
+.factory('PartyCreate', function($resource) {
+  return $resource("http://localhost:3000/parties.json");
+})

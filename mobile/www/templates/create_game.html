@@ -2,33 +2,42 @@
     <ion-content overflow-scroll="true" padding="true" class="has-header">
         <form class="list">
             <label class="item item-input">
+                <span class="input-label">Nom</span>
+                <input type="text" placeholder="" ng-model="party.name">
+            </label>
+            <label class="item item-input">
                 <span class="input-label">Date</span>
-                <input type="date" placeholder="">
+                <input type="date" placeholder="" ng-model="party.date">
             </label>
             <label class="item item-input">
                 <span class="input-label">Horaire</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="party.date">
             </label>
             <label class="item item-input">
                 <span class="input-label">Ville</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="party.city">
             </label>
-            <ion-checkbox>Bar</ion-checkbox>
-            <ion-checkbox>Chez moi</ion-checkbox>
-            <ion-checkbox>Extérieur</ion-checkbox>
+            <label class="item item-select">
+                <span class="input-label">Lieu</span>
+                <select ng-model="party.place">
+                    <option value="Chez moi">Chez Moi</option>
+                    <option value="Bar">Bar</option>
+                    <option value="Exterieur">Exterieur</option>
+                </select>
+            </label>
             <label class="item item-input">
                 <span class="input-label">Jeux</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="party.bordgame">
             </label>
             <label class="item item-input">
                 <span class="input-label">Description</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="party.description">
             </label>
             <label class="item item-input">
                 <span class="input-label">Nombre de place</span>
-                <input type="number" placeholder="">
+                <input type="number" placeholder="" ng-model="party.max_participant">
             </label>
-            <a ui-sref="menu.create_game_valid" id="crErUnePartie-button31" style="font-weight:;" class="button button-balanced  button-block">Créer ma partie</a>
+            <a  id="create_game-button31" style="font-weight:;" ng-click="partycreate()"class="button button-balanced  button-block">Créer ma partie</a>
         </form>
     </ion-content>
 </ion-view>
