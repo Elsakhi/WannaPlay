@@ -14,14 +14,15 @@
 ActiveRecord::Schema.define(version: 20160410180511) do
 
   create_table "parties", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "date"
-    t.string   "city"
-    t.string   "place"
-    t.string   "bordgames"
-    t.string   "description"
-    t.integer  "max_participant"
-    t.integer  "user_id"
+    t.string  "name"
+    t.date    "date"
+    t.string  "time"
+    t.string  "city"
+    t.string  "place"
+    t.string  "boardgames"
+    t.string  "description"
+    t.integer "max_participant"
+    t.integer "user_id"
   end
 
   add_index "parties", ["user_id"], name: "index_parties_on_user_id"

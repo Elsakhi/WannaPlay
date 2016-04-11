@@ -117,7 +117,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.game_set_players', {
-    url: '/page12',
+    url: '/page12?party_id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/game_set_players.html',
@@ -127,7 +127,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.game_settings', {
-    url: '/page13',
+    url: '/page13?party_id',
     views: {
       'side-menu21': {
         templateUrl: 'templates/game_settings.html',

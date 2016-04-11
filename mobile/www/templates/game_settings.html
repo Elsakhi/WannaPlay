@@ -5,12 +5,13 @@
             <button id="game_settings-button24" class="button button-balanced  button-block">Paramètres</button>
         </div>
         <ion-list>
-            <ion-item>Date :</ion-item>
-            <ion-item>Heure :</ion-item>
-            <ion-item>Lieu :</ion-item>
-            <ion-item>Jeux :</ion-item>
-            <ion-item>Description :</ion-item>
-            <ion-item>Nombre de participants max :</ion-item>
+            <ion-item>Nom : {{party.name}}</ion-item>
+            <ion-item>Date : {{party.date}} </ion-item>
+            <ion-item>Heure : {{party.time}}</ion-item>
+            <ion-item>Lieu : {{party.place}}</ion-item>
+            <ion-item>Jeux : {{party.boardgames}}</ion-item>
+            <ion-item>Description : {{party.description}}</ion-item>
+            <ion-item>Nombre de participants max : {{party.max_participant}}</ion-item>
         </ion-list>
         <a ui-sref="menu.game_settings_modify" id="game_settings-button19" class="button button-balanced  button-block">Modifier les paramètres</a>
     </ion-content>

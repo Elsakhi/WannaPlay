@@ -11,10 +11,11 @@
             </div>
         </div>
         <ion-list ng-repeat="party in parties">
-            <ion-item class="item-thumbnail-left" ui-sref="menu.game_set_players">
+            <ion-item ng-click="show(party.id)" class="item-thumbnail-left">
                 <img>
                 <h2>{{party.name}}</h2>
                 <p>{{party.bordgames}}</p>
+                <p>{{party.city}}</p>
             </ion-item>
         </ion-list>
     </ion-content>

@@ -45,12 +45,14 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('game_organizeCtrl', function($scope, MyParties) {
+.controller('game_organizeCtrl', function($scope, MyParties, $location) {
 	MyParties.query().$promise.then(function(response){
-		console.log(response);
   		$scope.parties = response;
 	});
 
+	$scope.show = function(party_id) {
+		$location.path('/side-menu21/page12').search({party_id: party_id})
+	}
 })
       
 .controller('game_participateCtrl', function($scope) {
@@ -61,12 +63,17 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('game_set_playersCtrl', function($scope) {
-
+.controller('game_set_playersCtrl', function($scope, $stateParams, $location) {
+	$scope.party_id = $stateParams.party_id;
+	$scope.show = function(party_id) {
+		$location.path('/side-menu21/page13').search({party_id: party_id})
+	}
 })
 
-.controller('game_settingsCtrl', function($scope) {
-
+.controller('game_settingsCtrl', function($scope, $stateParams, Party) {
+	Party.get({id: $stateParams.party_id}).$promise.then(function(response) {
+  		$scope.party = response
+	});
 })
 
 .controller('game_settings_modifyCtrl', function($scope) {

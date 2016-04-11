@@ -3,6 +3,10 @@ class PartiesController < ApplicationController
 		render json: Party.all
 	end
 
+	def show
+		render json: Party.find(params[:id])
+	end
+
 	def mine
 		render json: Party.where(user: current_user)
 	end
@@ -24,9 +28,10 @@ class PartiesController < ApplicationController
 			:date, 
 			:city, 
 			:place, 
-			:bordgames, 
+			:boardgames, 
 			:description, 
-			:max_participant)
+			:max_participant,
+			:time)
 	end	
   
 end
