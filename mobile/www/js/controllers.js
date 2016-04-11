@@ -1,17 +1,21 @@
 angular.module('app.controllers', [])
  
- .controller('apply_gameCtrl', function($scope) {
+.controller('apply_gameCtrl', function($scope) {
 
 })
 
-.controller('authenticationCtrl', function($scope, User) {
-	User.query().$promise.then(function(response){
-		console.log("loaded");
-		console.log(response);
-    	$scope.users = response;
-	});
+.controller('menuCtrl', function($scope, $location) {
+	$scope.logout = function(argument) {
+		console.log('hello, world');
+		window.localStorage['user'] = null;
+	    $location.path('/page1');
+
+	}
 })
 
+.controller('authenticationCtrl', function($scope) {
+	
+})
 
 .controller('create_gameCtrl', function($scope) {
 
@@ -89,8 +93,7 @@ angular.module('app.controllers', [])
   		var user_session = new UserSession({ user: $scope.data });
   		user_session.$save(
 	  		function(data){
-	      		window.localStorage['userId'] = data.id;
-	      		window.localStorage['userPseudo'] = data.pseudo;
+	      		window.localStorage['user'] = data
 	      		$location.path('/side-menu21/page4');
 	    	},
 	    	function(err){
@@ -104,6 +107,23 @@ angular.module('app.controllers', [])
 	}
 })
   
-.controller('sign_upCtrl', function($scope) {
+.controller('sign_upCtrl', function($scope, $location, UserCreate, $ionicPopup, $rootScope) {
+	$scope.user = {};
 
+	$scope.signup = function() {
+  		var user_create = new UserCreate({ user: $scope.user });
+  		user_create.$save(
+	  		function(user){
+	      		window.localStorage['user'] = data
+	      		$location.path('/side-menu21/page4');
+	    	},
+	    	function(err){
+	      		var error = err["data"]["error"] || err.data.join('. ')
+	      		var confirmPopup = $ionicPopup.alert({
+	        		title: 'An error occured',
+	        		template: error
+	      		});
+	      	}
+	    );
+  	}
 })

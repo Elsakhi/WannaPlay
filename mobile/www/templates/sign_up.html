@@ -3,53 +3,53 @@
         <form class="list">
             <label class="item item-input">
                 <span class="input-label">Pseudo</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.pseudo">
             </label>
             <label class="item item-input">
                 <span class="input-label">Email</span>
-                <input type="email" placeholder="">
+                <input type="email" placeholder="" ng-model="user.email">
             </label>
             <label class="item item-input">
                 <span class="input-label">Age</span>
-                <input type="number" placeholder="">
+                <input type="number" placeholder="" ng-model="user.age">
             </label>
             <label class="item item-select">
                 <span class="input-label">Sexe</span>
-                <select>
-                    <option>Femme</option>
-                    <option>Homme</option>
+                <select ng-model="user.gender">
+                    <option value="Femme">Femme</option>
+                    <option value="Homme">Homme</option>
                 </select>
             </label>
             <div class="spacer" style="width: 300px; height: 29px;"></div>
             <label class="item item-input">
                 <span class="input-label">Adresse</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.address">
             </label>
             <label class="item item-input">
                 <span class="input-label">Code postale</span>
-                <input type="number" placeholder="">
+                <input type="text" placeholder="" ng-model="user.zipcode">
             </label>
             <label class="item item-input">
                 <span class="input-label">Ville</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.city">
             </label>
             <div class="spacer" style="width: 300px; height: 26px;"></div>
             <label class="item item-input">
                 <span class="input-label">Description</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.description">
             </label>
             <label class="item item-input">
                 <span class="input-label">Jeux possédés</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.game">
             </label>
             <div class="spacer" style="width: 300px; height: 28px;"></div>
             <label class="item item-input">
                 <span class="input-label">Mot de passe</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="user.password" >
             </label>
             <ion-checkbox>J'accepte les conditions</ion-checkbox>
             
-               <a ui-sref="menu.home" id="sign_in-button2" style="font-weight:;" class="button button-balanced  button-block">Enregistrer le profil</a>
+               <a id="sign_in-button2" style="font-weight:;" ng-click="signup()" class="button button-balanced  button-block">Enregistrer le profil</a>
         </form>
     </ion-content>
 </ion-view>

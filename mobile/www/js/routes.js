@@ -19,7 +19,7 @@ angular.module('app.routes', [])
   .state('menu', {
     url: '/side-menu21',
     templateUrl: 'templates/menu.html',
-    abstract:true
+    controller: 'menuCtrl'
   })
 
   .state('sign_in', {
