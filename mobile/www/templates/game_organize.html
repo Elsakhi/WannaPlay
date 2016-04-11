@@ -10,11 +10,11 @@
                 <a ui-sref="menu.game_participated" id="game_organize-button23" style="left:-10px;font-weight:;" class="button button-balanced  button-full">J'ai participé</a>
             </div>
         </div>
-        <ion-list>
+        <ion-list ng-repeat="party in parties">
             <ion-item class="item-thumbnail-left" ui-sref="menu.game_set_players">
                 <img>
-                <h2>Ville date</h2>
-                <p>Jeux</p>
+                <h2>{{party.name}}</h2>
+                <p>{{party.bordgames}}</p>
             </ion-item>
         </ion-list>
     </ion-content>

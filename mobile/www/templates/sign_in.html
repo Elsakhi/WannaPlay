@@ -3,19 +3,19 @@
         <form class="list">
             <ion-list>
                 <label class="item item-input">
-                    <span class="input-label">Pseudo</span>
-                    <input type="text" placeholder="">
+                    <span class="input-label">Email</span>
+                    <input type="text" placeholder="" ng-model="data.email">
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Password</span>
-                    <input type="password" placeholder="">
+                    <input type="password" placeholder="" ng-model="data.password">
                 </label>
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
 
-            <a ui-sref="menu.home" id="sign_in-button2" style="font-weight:;" class="button button-balanced  button-block">Se connecter</a>
+            <a id="sign_in-button2" style="font-weight:;" ng-click="login()" class="button button-balanced  button-block">Se connecter</a>
 
-            <a ui-sref="menu.sign_up" id="sign_in-button3" style="font-weight:;" class="button button-balanced  button-block button-clear">Ou inscris toi !</a>
+            <a ui-sref="sign_up" id="sign_in-button3" style="font-weight:;" class="button button-balanced  button-block button-clear">Ou inscris toi !</a>
         </form>
     </ion-content>
 </ion-view>

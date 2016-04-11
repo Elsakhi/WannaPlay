@@ -25,7 +25,11 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('game_organizeCtrl', function($scope) {
+.controller('game_organizeCtrl', function($scope, MyParties) {
+	MyParties.query().$promise.then(function(response){
+		console.log(response);
+  		$scope.parties = response;
+	});
 
 })
       
@@ -78,8 +82,26 @@ angular.module('app.controllers', [])
 
 })
 
-.controller('sign_inCtrl', function($scope) {
+.controller('sign_inCtrl', function($scope, $location, UserSession, $ionicPopup, $rootScope) {
+	$scope.data = {};
 
+	$scope.login = function() {
+  		var user_session = new UserSession({ user: $scope.data });
+  		user_session.$save(
+	  		function(data){
+	      		window.localStorage['userId'] = data.id;
+	      		window.localStorage['userPseudo'] = data.pseudo;
+	      		$location.path('/side-menu21/page4');
+	    	},
+	    	function(err){
+	      		var error = err["data"]["error"] || err.data.join('. ')
+	      		var confirmPopup = $ionicPopup.alert({
+	        		title: 'An error occured',
+	        		template: error
+	      		});
+	    	}
+	    );
+	}
 })
   
 .controller('sign_upCtrl', function($scope) {

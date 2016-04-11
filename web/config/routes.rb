@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
- 
+  devise_for :users, controllers: {
+    sessions: 'user/sessions',
+    registrations: 'user/registrations',
+    passwords: 'user/passwords' 
+  }
 
   # mount API::Base => '/api'
 
   resources :users
 
-  resources :parties
+  resources :parties do
+    get 'mine' => 'parties#mine', on: :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

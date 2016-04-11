@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('authentication', {
+  .state('authentication', {
     url: '/page1',
     templateUrl: 'templates/authentication.html',
     controller: 'authenticationCtrl'
